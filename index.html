@@ -3,136 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cakes & Pastery | Catering School</title>
+  <title>Ray Creamy Cakes</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fff8f0;
-      color: #333;
       line-height: 1.6;
-      scroll-behavior: smooth;
+      background-color: #f8f8f8;
     }
 
-    /* Navbar */
+    /* Letterhead style */
+    header {
+      background: white;
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 3px solid pink;
+    }
+    header h1 {
+      margin: 0;
+      color: hotpink;
+      font-size: 2rem;
+      font-family: "Brush Script MT", cursive, sans-serif;
+    }
+
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #ff6600;
-      padding: 0.8rem 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      z-index: 1000;
+      background: #333;
+      padding: 0.5rem;
+      text-align: center;
     }
-
     nav a {
       color: white;
       text-decoration: none;
+      margin: 0 1rem;
       font-weight: bold;
     }
-
     nav a:hover {
       text-decoration: underline;
     }
 
-    /* Hero Section */
-    .hero {
-      background: url('https://source.unsplash.com/1600x900/?cake,bakery') no-repeat center center/cover;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 0 1rem;
-      margin-top: 3rem; /* offset navbar */
-    }
-
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.55);
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 600px;
-    }
-
-    .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .order-button {
-      display: inline-block;
-      background-color: #ff6600;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    .order-button:hover {
-      background-color: #ff3300;
-    }
-
-    /* Section General */
     section {
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #ff6600;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    /* Product Grid */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .product-card {
+      padding: 2rem;
       background: white;
-      border-radius: 8px;
+      margin: 1rem auto;
+      max-width: 900px;
+      border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 1rem;
-      text-align: center;
-      transition: transform 0.2s ease;
     }
 
-    .product-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 0.8rem;
-    }
-
-    .product-card h3 {
-      margin: 0.5rem 0;
-      color: #ff6600;
-    }
-
-    /* Order Form Card */
     .form-card {
       max-width: 500px;
       margin: 2rem auto;
@@ -144,73 +62,57 @@
 
     .form-card h2 {
       text-align: center;
-      color: #ff6600;
+      color: hotpink;
       margin-bottom: 1.5rem;
     }
 
-    label {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-weight: bold;
-    }
-
-    input, textarea, button {
+    input, textarea {
       width: 100%;
-      padding: 0.8rem;
       margin-bottom: 1rem;
       border: 1px solid #ccc;
       border-radius: 6px;
+      padding: 0.8rem;
       font-size: 1rem;
     }
 
-    textarea {
-      resize: vertical;
-    }
-
     button {
-      background-color: #ff6600;
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 6px;
+      background-color: hotpink;
       color: white;
+      font-size: 1.1rem;
       font-weight: bold;
-      cursor: pointer;
       border: none;
-      transition: background 0.3s ease;
+      cursor: pointer;
     }
-
     button:hover {
-      background-color: #ff3300;
+      background-color: deeppink;
     }
 
-    /* Footer */
     footer {
-      background-color: #ff9966;
-      color: white;
       text-align: center;
       padding: 1rem;
+      background: #333;
+      color: white;
       margin-top: 2rem;
-      font-size: 0.9rem;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav {
-        flex-wrap: wrap;
-        gap: 0.8rem;
-      }
-      .hero h1 {
-        font-size: 1.6rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      .order-button {
-        font-size: 0.95rem;
-        padding: 0.6rem 1.2rem;
-      }
+    .logo-text {
+      font-family: "Brush Script MT", cursive, sans-serif;
+      font-size: 1.2rem;
+      color: hotpink;
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Letterhead -->
+  <header>
+    <h1>Ray Creamy Cakes</h1>
+    <div class="logo-text">Ray Creamy Cakes</div>
+  </header>
+
+  <!-- Navigation -->
   <nav>
     <a href="#home">Home</a>
     <a href="#products">Products</a>
@@ -218,47 +120,28 @@
     <a href="#order-form">Order</a>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero" id="home">
-    <div class="hero-overlay">
-      <h1>Cakes, Pastery & Catering School</h1>
-      <p>Delicious treats and professional training</p>
-      <a href="#order-form" class="order-button">Place Your Order</a>
-    </div>
-  </header>
-
-  <!-- Products -->
-  <section id="products">
-    <h2>Our Offerings</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://source.unsplash.com/400x300/?cake" alt="Cakes & Pastries">
-        <h3>Cakes & Pastries</h3>
-        <p>Beautiful designs and tasty treats for every occasion.</p>
-      </div>
-
-      <div class="product-card">
-        <img src="https://source.unsplash.com/400x300/?snacks" alt="Small Chops">
-        <h3>Small Chops</h3>
-        <p>Perfect for parties, events, and special celebrations.</p>
-      </div>
-
-      <div class="product-card">
-        <img src="https://source.unsplash.com/400x300/?cooking" alt="Catering Training">
-        <h3>Catering Classes</h3>
-        <p>Learn the art of baking and catering professionally.</p>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:1rem;"><em>Note: Prices are negotiated directly.</em></p>
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Welcome to Ray Creamy Cakes</h2>
+    <p>We specialize in cakes, pastries, small chops, and catering training. Place your order or join our catering school today!</p>
   </section>
 
-  <!-- Contact -->
+  <!-- Products Section -->
+  <section id="products">
+    <h2>Our Products & Services</h2>
+    <ul>
+      <li>Cakes for all occasions</li>
+      <li>Pastries and small chops</li>
+      <li>Catering training school</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p style="text-align:center;">
-      WhatsApp / Phone: <a href="https://wa.me/2348141352180">08141352180</a><br>
-      Opay Payment: Motunrayo Opeoluwa Onashile, 08141352180
-    </p>
+    <p>WhatsApp / Phone: <strong>08141352180</strong></p>
+    <p>Opay Payment Details:</p>
+    <p><strong>8141352180</strong><br>Motunrayo Opeoluwa Onashile</p>
   </section>
 
   <!-- Order Form -->
@@ -286,24 +169,19 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Cakes & Pastery | All Rights Reserved</p>
+    <p>&copy; 2025 Ray Creamy Cakes. All rights reserved.</p>
   </footer>
 
-  <!-- WhatsApp Script -->
   <script>
-    const form = document.getElementById('orderForm');
-    form.addEventListener('submit', function(e) {
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      const name = document.getElementById('name').value;
-      const product = document.getElementById('product').value;
-      const quantity = document.getElementById('quantity').value;
-      const address = document.getElementById('address').value;
+      let name = document.getElementById("name").value;
+      let product = document.getElementById("product").value;
+      let quantity = document.getElementById("quantity").value;
+      let address = document.getElementById("address").value;
 
-      const message = `Hello! I would like to place an order.%0A%0AName: ${name}%0AProduct: ${product}%0AQuantity: ${quantity}%0ADelivery Address: ${address}`;
-
-      const whatsappURL = `https://wa.me/2348141352180?text=${message}`;
-      window.open(whatsappURL, '_blank');
-      alert("✅ Your order details are being sent via WhatsApp.");
+      let message = `Hello, my name is ${name}. I would like to order ${quantity} x ${product}. Delivery Address: ${address}`;
+      window.open(`https://wa.me/2348141352180?text=${encodeURIComponent(message)}`, "_blank");
     });
   </script>
 </body>
