@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ray Creamy Cakes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f8f8f8;
+    }
+
+    /* Letterhead style */
+    header {
+      background: white;
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 3px solid pink;
+    }
+    header h1 {
+      margin: 0;
+      color: hotpink;
+      font-size: 2rem;
+      font-family: "Brush Script MT", cursive, sans-serif;
+    }
+
+    nav {
+      background: #333;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 2rem;
+      background: white;
+      margin: 1rem auto;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .form-card {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .form-card h2 {
+      text-align: center;
+      color: hotpink;
+      margin-bottom: 1.5rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 0.8rem;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 6px;
+      background-color: hotpink;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: deeppink;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: white;
+      color: hotpink;
+      margin-top: 2rem;
+      border-top: 2px solid pink;
+    }
+
+    .logo-text {
+      font-family: "Brush Script MT", cursive, sans-serif;
+      font-size: 1.2rem;
+      color: hotpink;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Letterhead -->
+  <header>
+    <h1>Ray Creamy Cakes</h1>
+    <div class="logo-text">Ray Creamy Cakes</div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+    <a href="#order-form">Order</a>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h2>Welcome to Ray Creamy Cakes</h2>
+    <p>We specialize in cakes, pastries, small chops, and catering training. Place your order or join our catering school today!</p>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <h2>Our Products & Services</h2>
+    <ul>
+      <li>Cakes for all occasions</li>
+      <li>Pastries and small chops</li>
+      <li>Catering training school</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>WhatsApp / Phone: <strong>08141352180</strong></p>
+    <p>Opay Payment Details:</p>
+    <p><strong>8141352180</strong><br>Motunrayo Opeoluwa Onashile</p>
+  </section>
+
+  <!-- Order Form -->
+  <section id="order-form">
+    <div class="form-card">
+      <form id="orderForm">
+        <h2>Order Form</h2>
+
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="product">Product/Service:</label>
+        <input type="text" id="product" name="product" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+
+        <label for="address">Delivery Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <button type="submit">Send Order via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Ray Creamy Cakes. All rights reserved.</p>
+    <div class="logo-text">Ray Creamy Cakes</div>
+  </footer>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      let product = document.getElementById("product").value;
+      let quantity = document.getElementById("quantity").value;
+      let address = document.getElementById("address").value;
+
+      let message = `Hello, my name is ${name}. I would like to order ${quantity} x ${product}. Delivery Address: ${address}`;
+      window.open(`https://wa.me/2348141352180?text=${encodeURIComponent(message)}`, "_blank");
+    });
+  </script>
+</body>
+</html>
