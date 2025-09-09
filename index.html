@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ray Creamy Cakes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* Header */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f8f8f8;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:30px;
+      color:#000000; /* Pure black */
+      font-family:"Brush Script MT",cursive;
+    }
+
+    .nav-right a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    .nav-right img {
+      height: 40px;
+      margin-left: 15px;
+      vertical-align: middle;
+    }
+
+    /* Main content */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff6f61;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* Services / Products section */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .service-item {
+      width: 250px;
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+      background-color: #fafafa;
+    }
+
+    .service-item h3 {
+      margin-bottom: 15px;
+    }
+
+    /* Contact / Orders */
+    .contact {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #f0f0f0;
+    }
+
+    .contact p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .contact a {
+      color: #ff6f61;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #fff;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media (max-width: 600px) {
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="nav">
+    <div class="brand">
+      <h1>Ray Creamy Cakes</h1>
+    </div>
+    <div class="nav-right">
+      <a href="https://wa.me/2348141352180" target="_blank">08141352180</a>
+      <img src="logo.png" alt="Ray Creamy Cakes Logo">
+    </div>
+  </div>
+
+  <!-- Hero / Intro -->
+  <div class="hero">
+    <h2>Delicious Cakes, Small Chops & Catering Services</h2>
+    <p>Order your favorite treats directly from us. Prices negotiated individually.</p>
+    <a href="#contact" class="cta-button">Order Now</a>
+  </div>
+
+  <!-- Services / Products -->
+  <div class="services">
+    <div class="service-item">
+      <h3>Cakes</h3>
+      <p>Custom cakes for all occasions. Contact us to discuss your order.</p>
+    </div>
+    <div class="service-item">
+      <h3>Small Chops</h3>
+      <p>Assorted small chops for events. Reach out to place your order.</p>
+    </div>
+    <div class="service-item">
+      <h3>Catering</h3>
+      <p>Catering services for parties, weddings, and events. Prices negotiated directly.</p>
+    </div>
+  </div>
+
+  <!-- Contact / Orders -->
+  <div class="contact" id="contact">
+    <p>Contact us via WhatsApp/Phone: <a href="https://wa.me/2348141352180" target="_blank">08141352180</a></p>
+    <p>Opay details for payment: Motunrayo Opeoluwa Onashile – 8141352180</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Ray Creamy Cakes. All rights reserved.</p>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/2348141352180" target="_blank" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+</body>
+</html>
