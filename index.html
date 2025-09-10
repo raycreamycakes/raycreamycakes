@@ -105,35 +105,37 @@
 
   <!-- HEADER / LETTERHEAD -->
   <header class="letterhead" role="banner">
-    <div class="topbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color:#fff; flex-wrap: wrap;">
-  
-  <div class="brand">
-    <div class="logo-mark" aria-hidden>RC</div>
-    <div>
-      <div class="tag">Delight in Every Bite</div>
+
+  <div class="topbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color:#fff; flex-wrap: wrap;">
+
+    <!-- Brand / left side -->
+    <div class="brand">
+      <div class="logo-mark" aria-hidden>RC</div>
+      <div>
+        <div class="tag">Delight in Every Bite</div>
+      </div>
     </div>
+
+    <!-- Right side: logo above tabs and cart -->
+    <div class="nav-right" style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+
+      <!-- Logo -->
+      <img src="IMG-20250909-WA0002.jpg" alt="Ray Creamy Cakes Logo" style="width: 250px; height: auto; object-fit: contain;">
+
+      <!-- Navigation tabs and cart -->
+      <nav class="topnav" aria-label="Main navigation" style="display: flex; gap: 15px;">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="javascript:void(0)" id="cart-toggle" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+
+    </div>
+
   </div>
 
-  <div class="nav-right" style="flex-shrink: 0; width: auto; max-width: 150px; height: 50px;">
-  <img src="IMG-20250909-WA0002.jpg" alt="Ray Creamy Cakes Logo" style="width: 300px; height: auto; object-fit: contain;">
-</div>
-</div>
-
-<nav class="topnav" aria-label="Main navigation">
-  <div class="nav-wrap">
-    <div class="nav-left" style="display: flex; align-items: center; flex-shrink:1;">
-      <h1 style="margin:0; font-size:24px; color:#000; white-space:nowrap;">Ray Creamy Cakes</h1>
-      <a href="#home">Home</a>
-          <a href="#products">Products</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="nav-right">
-          <a href="javascript:void(0)" id="cart-toggle" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+</header>
 
 <!-- HERO -->
 <main id="home" style="padding: 40px; max-width: 1200px; margin: 0 auto;">
