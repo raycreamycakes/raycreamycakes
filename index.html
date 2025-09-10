@@ -134,54 +134,72 @@
     </nav>
   </header>
 
-  <!-- HERO -->
-  <main id="home">
-    <section class="hero">
-      <div class="hero-left">
-        <h2>Freshly baked. Beautifully crafted.</h2>
-        <p>Ray Creamy Cakes offers cakes, pastries, small chops, doughnuts and parfaits — all made with love and delivered across Lagos.</p>
-        <div class="hero-cta">
-          <button class="btn-primary" onclick="document.getElementById('search').focus()">Order Now via WhatsApp</button>
-        </div>
+<!-- HERO -->
+<main id="home" style="padding: 40px; max-width: 1200px; margin: 0 auto;">
+  <section class="hero" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-bottom: 40px;">
+    <div class="hero-left" style="flex: 1 1 400px;">
+      <h2>Freshly baked. Beautifully crafted.</h2>
+      <p>Ray Creamy Cakes offers cakes, pastries, small chops, doughnuts and parfaits — all made with love and delivered across Lagos.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="document.getElementById('search').focus()">Order Now via WhatsApp</button>
       </div>
-      <div class="hero-right">
-        <img class="hero-img" src="https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=01e2d5b9b2ef9b2c6e6ba4f3a6d6a6b9" alt="Cake hero image">
-      </div>
-    </section>
+    </div>
+    <div class="hero-right" style="flex: 1 1 400px; text-align:center;">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=01e2d5b9b2ef9b2c6e6ba4f3a6d6a6b9" 
+           alt="Cake hero image" style="max-width:100%; border-radius:12px;">
+    </div>
+  </section>
 
-    <!-- SEARCH -->
-    <div class="search-area">
-      <input id="search" placeholder="Search products (e.g., doughnuts, parfait, birthday)..." aria-label="Search products">
+  <!-- SEARCH -->
+  <div class="search-area" style="margin-bottom:40px; text-align:center;">
+    <input id="search" placeholder="Search products (e.g., doughnuts, parfait, birthday)..." aria-label="Search products" 
+           style="padding:12px; width:80%; max-width:500px; border:1px solid #ddd; border-radius:8px;">
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <section id="products" class="products-section" style="margin-bottom:50px;">
+    <div class="section-title" style="text-align:center; margin-bottom:20px;">
+      <h3>Our Menu</h3>
+      <div class="muted">Tap a product to view options & add to cart</div>
     </div>
 
-    <!-- PRODUCTS GRID -->
-    <section id="products" class="products-section">
-      <div class="section-title">
-        <h3>Our Menu</h3>
-        <div class="muted">Tap a product to view options & add to cart</div>
+    <!-- Temporary sample product cards -->
+    <div id="grid" class="grid" style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <div style="flex:1 1 250px; max-width:300px; text-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=600" alt="Chocolate Cake" style="width:100%; border-radius:12px;">
+        <h4>Chocolate Cake</h4>
+        <p>Rich, moist, layered with creamy frosting.</p>
       </div>
+      <div style="flex:1 1 250px; max-width:300px; text-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1586985288825-3a7f49b37d5d?q=80&w=600" alt="Vanilla Cake" style="width:100%; border-radius:12px;">
+        <h4>Vanilla Cake</h4>
+        <p>Classic vanilla delight with smooth buttercream.</p>
+      </div>
+      <div style="flex:1 1 250px; max-width:300px; text-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1565958011703-44e6a86a1ba4?q=80&w=600" alt="Fruit Cake" style="width:100%; border-radius:12px;">
+        <h4>Fruit Cake</h4>
+        <p>Loaded with fresh fruits and sweet flavors.</p>
+      </div>
+    </div>
+  </section>
 
-      <!-- We'll inject product cards via JS but include container -->
-      <div id="grid" class="grid"></div>
-    </section>
+  <!-- ABOUT -->
+  <section id="about" class="about" style="margin-bottom:50px;">
+    <h3 style="color:var(--brand-pink);margin-top:0">About Ray Creamy Cakes</h3>
+    <p>Ray Creamy Cakes is a home-grown bakery specializing in custom cakes, pastries, and party treats. We use fresh ingredients, craft each order by hand, and deliver with care. Want something special? Contact us and we’ll design the perfect dessert for your event.</p>
+  </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="about">
-      <h3 style="color:var(--brand-pink);margin-top:0">About Ray Creamy Cakes</h3>
-      <p>Ray Creamy Cakes is a home-grown bakery specializing in custom cakes, pastries, and party treats. We use fresh ingredients, craft each order by hand, and deliver with care. Want something special? Contact us and we’ll design the perfect dessert for your event.</p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-      <h3 style="color:var(--brand-pink);margin-top:0">Contact & Payment</h3>
-      <p style="text-align:center;">
-        WhatsApp / Phone: <strong><a href="https://wa.me/2348141352180" target="_blank">08141352180</a></strong><br><br>
-        Opay Payment Details:<br>
-        <strong>8141352180</strong><br>
-        Motunrayo Opeoluwa Onashile
-      </p>
-    </section>
-  </main>
+  <!-- CONTACT -->
+  <section id="contact" class="contact" style="margin-bottom:50px;">
+    <h3 style="color:var(--brand-pink);margin-top:0">Contact & Payment</h3>
+    <p style="text-align:center;">
+      WhatsApp / Phone: <strong><a href="https://wa.me/2348141352180" target="_blank">08141352180</a></strong><br><br>
+      Opay Payment Details:<br>
+      <strong>8141352180</strong><br>
+      Motunrayo Opeoluwa Onashile
+    </p>
+  </section>
+</main>
 
   <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
