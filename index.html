@@ -267,15 +267,35 @@
   .about p, .contact p{color:#444}
 
   /* Footer */
-  footer.site-footer{text-align:center;padding:20px;background:white;border-top:2px solid pink;margin-top:18px}
-  footer .logo-text{font-family:"Brush Script MT",cursive;color:var(--brand-pink);font-size:18px;margin-top:6px}
+  <footer class="site-footer">
+  <img src="IMG-20250909-WA0002.jpg" alt="Ray Creamy Cakes Logo" class="footer-logo">
+  <p>&copy; 2025 Ray Creamy Cakes. All rights reserved.</p>
+</footer>
 
-  /* Responsive tweaks */
-  @media (max-width:900px){
-    .modal-card{flex-direction:column}
-    .modal-left img{height:220px}
-    .modal-right{width:100%}
-    
+<style>
+/* Footer styling */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff; /* You can change the background color if needed */
+}
+
+.footer-logo {
+  max-width: 250px; /* Logo will not exceed 250px */
+  width: 100%;       /* Logo will scale down on smaller screens */
+  height: auto;
+  margin-bottom: 10px; /* Small space between logo and text */
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 600px) {
+  .footer-logo {
+    max-width: 150px; /* Reduce logo size on mobile */
+  }
+  .site-footer p {
+    font-size: 14px; /* Slightly smaller text on mobile */
+  }
+}
 </style>
 </head>
 <body>
