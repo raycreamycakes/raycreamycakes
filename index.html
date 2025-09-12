@@ -16,8 +16,7 @@
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--muted);color:#222;line-height:1.4}
     /* Header / Letterhead */
-    header./* Header Layout */
-.letterhead {
+    header.letterhead {
   background-color: #fff;
   padding: 10px 20px;
 }
@@ -64,7 +63,7 @@
 }
 
 /* Navigation */
-.navbar ul {
+.topnav ul {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -74,11 +73,11 @@
   border-radius: 10px;
 }
 
-.navbar ul li {
+.topnav ul li {
   margin: 0 15px;
 }
 
-.navbar ul li a {
+.topnav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -148,65 +147,73 @@
   body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--muted);color:#222;line-height:1.4}
 
   /* --- HEADER FIX --- */
-  header.letterhead {
-    min-height: 20vh;
-    background: var(--white);
-    border-bottom: 4px solid pink;
-    position: sticky;
-    top: 0;
-    z-index: 1100;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .topbar {
-    max-width: var(--max-width);
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-  }
-  .brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    text-align: center;
-  }
-  .logo-mark {
-    width: 100px;
-    height: auto;
-    object-fit: contain;
-  }
-  .brand h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #000; /* black title */
-    font-family: Georgia, serif;
-    font-weight: bold;
-  }
-  .brand .tag {
-    font-size: 14px;
-    color: var(--brand-pink);
-    opacity: 1;
-  }
-  /* Nav */
-  nav.topnav {
-    background: var(--brand-pink);
-    padding: 6px 20px;
-    border-radius: 6px;
-  }
-  nav.topnav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 10px;
-  }
-  nav.topnav a:hover {
-    color: #ffd700;
-  }
+  header./* Header Layout */
+.letterhead {
+  background-color: #fff;
+  height: 20vh; /* fixed header height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* align to the left */
+  gap: 15px;
+}
+
+/* Left block */
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Logo */
+.site-logo {
+  max-height: 70px;
+  width: auto;
+}
+
+/* Title + tagline */
+.brand-text {
+  text-align: left;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 14px;
+  color: #d63384;
+}
+
+/* Navigation */
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  background: #d63384;
+  border-radius: 10px;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
   /* Hero */
   .hero{max-width:var(--max-width);margin:18px auto 0;background:linear-gradient(180deg,rgba(214,51,132,0.05),transparent);padding:30px;border-radius:12px;display:flex;gap:20px;align-items:center}
