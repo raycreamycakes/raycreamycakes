@@ -254,20 +254,7 @@
   .modal-actions{display:flex;gap:10px;margin-top:6px}
   .muted{color:#666;font-size:13px}
 
-  /* Cart sidebar */
-  .cart-sidebar{position:fixed;right:-420px;top:0;height:100%;width:420px;background:white;box-shadow:-10px 0 30px rgba(0,0,0,0.12);transition:right .28s;z-index:2500;display:flex;flex-direction:column}
-  .cart-sidebar.open{right:0}
-  .cart-head{padding:18px;border-bottom:1px solid #f3d6e5;display:flex;align-items:center;justify-content:space-between}
-  .cart-body{padding:12px;flex:1;overflow:auto}
-  .cart-item{display:flex;gap:10px;padding:10px;border-bottom:1px dashed #eee;align-items:center}
-  .cart-item img{width:72px;height:56px;object-fit:cover;border-radius:6px}
-  .cart-item .info{flex:1}
-  .cart-item .info b{display:block}
-  .cart-item .qty{display:flex;gap:6px;align-items:center;margin-top:6px}
-  .cart-footer{padding:12px;border-top:1px solid #f3d6e5}
-  .cart-total{font-weight:900;color:var(--brand-pink);font-size:18px}
-  .cart-empty{padding:18px;text-align:center;color:#777}
-
+  
   /* About / Contact sections */
   .about, .contact{max-width:var(--max-width);margin:18px auto;padding:18px;background:white;border-radius:10px;box-shadow:var(--card-shadow)}
   .about p, .contact p{color:#444}
@@ -289,31 +276,32 @@
 <body>
 
   <!-- HEADER / LETTERHEAD -->
-  <header class="letterhead">
   <header class="letterhead" role="banner">
-  <!-- Brand Section -->
-  <div class="brand" style="text-align:center;">
-    <div class="logo-mark" aria-hidden style="font-size:22px; font-weight:bold; color:#d63384;">RC</div>
-    <h1>Ray Creamy Cakes</h1>
+  <div class="topbar">
+    <!-- Left Section: RC + Text -->
+    <div class="brand-left">
+      <div class="logo-mark">RC</div>
+      <div class="brand-text">
+        <h1 class="site-title">Ray Creamy Cakes</h1>
+        <p class="tagline">Delight in every bite</p>
+      </div>
+    </div>
+
+    <!-- Right Section: Actual Logo -->
+    <div class="brand-right">
+      <img src="IMG-20250909-WA0002.jpg" alt="Ray Creamy Cakes Logo" class="site-logo">
+    </div>
   </div>
 
-  <!-- Navbar Section -->
+  <!-- Navigation Tabs -->
   <nav class="navbar">
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><span class="divider">|</span></li>
       <li><a href="#products">Products</a></li>
-      <li><span class="divider">|</span></li>
       <li><a href="#about">About</a></li>
-      <li><span class="divider">|</span></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-
-  <!-- Logo Positioned to Right Side -->
-  <div class="logo-right">
-    <img src="IMG-20250909-WA0002.jpg" alt="Ray Creamy Cakes Logo">
-  </div>
 </header>
 
 <!-- HERO -->
