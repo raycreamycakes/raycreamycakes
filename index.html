@@ -133,11 +133,11 @@ header.letterhead {
 }
 
 /* Navigation bar */
-.navbar ul {
+..navbar ul {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  /* center everything neatly */
   padding: 10px 0;
   margin: 0;
   background: var(--brand-pink);
@@ -147,22 +147,28 @@ header.letterhead {
 .navbar li {
   display: flex;
   align-items: center;
+  flex: 1;               /* each item takes equal space */
+  justify-content: center;
+  min-width: 0;          /* prevents overflow */
 }
 
 .navbar a {
-  padding: 10px 14px;
+  display: inline-block;
+  padding: 8px 6px;      /* reduced padding so 4 tabs fit nicely */
   color: #fff;
   text-decoration: none;
   font-weight: 600;
+  text-align: center;
+  width: 100%;           /* each link fills its flex box */
 }
 
-/* Stylish divider between tabs */
 .divider {
   width: 2px;
   height: 20px;
   background: linear-gradient(to bottom, transparent, #aaa, transparent);
-  margin: 0 8px;
+  margin: 0 6px;
   border-radius: 2px;
+  flex: 0;               /* divider doesn’t stretch */
 }
     /* Hero */
     .hero{max-width:var(--max-width);margin:18px auto 0;background:linear-gradient(180deg,rgba(214,51,132,0.05),transparent);padding:30px;border-radius:12px;display:flex;gap:20px;align-items:center}
