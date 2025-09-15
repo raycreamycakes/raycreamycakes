@@ -339,7 +339,15 @@ header.letterhead {
   /* About / Contact sections */
   .about, .contact{max-width:var(--max-width);margin:18px auto;padding:18px;background:white;border-radius:10px;box-shadow:var(--card-shadow)}
   .about p, .contact p{color:#444}
-
+.contact .whatsapp-icon {
+  display: inline-block;
+  height: 50px;
+  width: auto;
+}
+.contact p {
+  text-align: center;
+}
+    
   /* Footer */
   <footer class="site-footer">
   <img src="IMG-20250909-WA0002.jpg" alt="Ray Creamy Cakes Logo" class="footer-logo">
@@ -488,14 +496,17 @@ header.letterhead {
 
   <!-- CONTACT -->
   <section id="contact" class="contact" style="margin-bottom:50px;">
-    <h3 style="color:var(--brand-pink);margin-top:0">Contact & Payment</h3>
-    <p style="text-align:center;">
-      WhatsApp / Phone: <strong><a href="https://wa.me/2348141352180" target="_blank">08141352180</a></strong><br><br>
-      Opay Payment Details:<br>
-      <strong>8141352180</strong><br>
-      Motunrayo Opeoluwa Onashile
-    </p>
-  </section>
+  <h3 style="color:var(--brand-pink);margin-top:0">Contact & Payment</h3>
+  
+  <p style="text-align:center;">
+    WhatsApp / Phone: 
+    <a href="https://wa.me/2348141352180" target="_blank" style="display:inline-block;">
+      <img src="path-to-whatsapp-icon.png" 
+           alt="Chat on WhatsApp" 
+           style="height:50px; width:auto;">
+    </a>
+  </p>
+</section>
 </main>
 
   <!-- FOOTER -->
