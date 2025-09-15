@@ -697,154 +697,29 @@ header.letterhead {
       return total;
     }
 
-    /* ---------- Cart logic ---------- */
-    let CART = []; // items: {id,name,price,qty,sizeLabel,extrasLabel,img}
-
-    // quick add: add single qty 1 with no extras
-    function quickAdd(prodId){
-      const p = PRODUCTS.find(x=>x.id===prodId);
-      if(!p) return;
-      const item = {
-        id:Date.now()+Math.random().toString(36).slice(2,7),
-        pid:p.id,
-        name:p.name,
-        img:p.img,
-        price: p.price,
-        qty:1,
-        sizeLabel:'Standard',
-        extrasLabel:'-'
-      };
-      CART.push(item);
-      updateCartUI();
-      openCart();
+/* ---------- Direct order from modal (one product) ---------- */
+function orderDirect(){
+  // create WhatsApp message for the single product in modal
+  if(!activeProduct) return;
+  const qty = Math.max(1, parseInt(modalQty.value||1,10));
+  const sizeLabel = modalSize.options[modalSize.selectedIndex].text;
+  let extrasArr = [];
+  modalExtras.querySelectorAll('input[type="checkbox"]').forEach((cb, idx)=>{
+    if(cb.checked){
+      const ex = activeProduct.extras[idx];
+      if(ex) extrasArr.push(`${ex.name}`);
     }
+  });
+  const extrasLabel = extrasArr.length ? extrasArr.join(', ') : '-';
+  const price = recalcModalPrice();
 
-    function addModalToCart(){
-      const qty = Math.max(1, parseInt(modalQty.value||1,10));
-      const sizeDelta = parseInt(modalSize.value||0,10);
-      const base = parseInt(activeProduct.price,10);
-      // create size label
-      let sizeLabel = modalSize.options[modalSize.selectedIndex].text;
-      // extras
-      let extrasArr = [];
-      modalExtras.querySelectorAll('input[type="checkbox"]').forEach((cb, idx)=>{
-        if(cb.checked){
-          // extras come from activeProduct.extras in same order
-          const ex = activeProduct.extras[idx];
-          if(ex) extrasArr.push(`${ex.name} (+₦${formatN(ex.price)})`);
-        }
-      });
-      const extrasLabel = extrasArr.length ? extrasArr.join(', ') : '-';
-      const itemPrice = (base + sizeDelta + (extrasArr.reduce((s,_,i)=>s + (activeProduct.extras[i]?.price||0),0))) * qty;
-      const cartItem = {
-        id: Date.now()+Math.random().toString(36).slice(2,7),
-        pid: activeProduct.id,
-        name: activeProduct.name,
-        img: activeProduct.img,
-        price: itemPrice,
-        qty: qty,
-        unitPrice: Math.round(itemPrice/qty),
-        sizeLabel: sizeLabel,
-        extrasLabel: extrasLabel
-      };
-      CART.push(cartItem);
-      updateCartUI();
-      closeModal();
-      openCart();
-    }
+  let msg = `Hello Ray Creamy Cakes, I'd like to order:%0A%0A${activeProduct.name} - ${sizeLabel} - ${extrasLabel} - Qty: ${qty} - ₦${formatN(price)}%0A%0AName:%0APhone:%0ADelivery Address:%0A`;
+  const wa = `https://wa.me/2348141352180?text=${msg}`;
+  window.open(wa,'_blank');
+}
 
-    function updateCartUI(){
-      const container = document.getElementById('cartItemsContainer');
-      container.innerHTML = '';
-      if(CART.length === 0){
-        document.getElementById('cartEmpty').style.display = 'block';
-      } else {
-        document.getElementById('cartEmpty').style.display = 'none';
-      }
-      let total = 0;
-      CART.forEach((it, idx)=>{
-        total += it.price;
-        const div = document.createElement('div');
-        div.className = 'cart-item';
-        div.innerHTML = `
-          <img src="${it.img}" alt="${it.name}">
-          <div class="info">
-            <b>${it.name}</b>
-            <div class="muted">${it.sizeLabel}</div>
-            <div style="margin-top:6px">${it.extrasLabel}</div>
-            <div class="qty">
-              <button onclick="changeQty(${idx}, -1)" style="padding:6px;background:#fff;border:1px solid #eee;border-radius:6px;cursor:pointer">-</button>
-              <span style="padding:6px 8px;border-radius:6px;background:#faf5fb;margin:0 6px">${it.qty}</span>
-              <button onclick="changeQty(${idx}, 1)" style="padding:6px;background:#fff;border:1px solid #eee;border-radius:6px;cursor:pointer">+</button>
-              <button onclick="removeFromCart(${idx})" style="margin-left:10px;padding:6px;background:#ffeef6;border:none;border-radius:6px;color:var(--brand-pink);cursor:pointer">Remove</button>
-            </div>
-          </div>
-          <div style="text-align:right;font-weight:800;color:var(--brand-pink)">₦${formatN(it.price)}</div>
-        `;
-        container.appendChild(div);
-      });
-      document.getElementById('cartTotal').innerText = formatN(total);
-      document.getElementById('cart-count').innerText = CART.length;
-      document.getElementById('cart-count-text').innerText = CART.length + (CART.length===1 ? ' item' : ' items');
-    }
-
-    function changeQty(index, delta){
-      if(!CART[index]) return;
-      let it = CART[index];
-      let newQty = it.qty + delta;
-      if(newQty < 1) newQty = 1;
-      // unitPrice = it.price / it.qty
-      const unit = Math.round(it.price / it.qty);
-      it.qty = newQty;
-      it.price = unit * it.qty;
-      updateCartUI();
-    }
-
-    function removeFromCart(index){
-      CART.splice(index,1);
-      updateCartUI();
-    }
-
-    function openCart(){ document.getElementById('cartSidebar').classList.add('open'); }
-    function closeCart(){ document.getElementById('cartSidebar').classList.remove('open'); }
-    function toggleCart(){ document.getElementById('cartSidebar').classList.toggle('open'); }
-
-    /* ---------- Checkout via WhatsApp ---------- */
-    function checkout(){
-      if(CART.length === 0){ alert('Your cart is empty! Please add items before checkout.'); return; }
-      let total = CART.reduce((s,i)=>s + (i.price || 0), 0);
-      let msg = `Hello Ray Creamy Cakes, I'd like to place an order:%0A%0A`;
-      CART.forEach((it, idx)=>{
-        msg += `${idx+1}. ${it.name} - ${it.sizeLabel} - ${it.extrasLabel} - Qty: ${it.qty} - ₦${formatN(it.price)}%0A`;
-      });
-      msg += `%0ATotal: ₦${formatN(total)}%0A%0AName:%0APhone:%0ADelivery Address:%0APreferred Delivery Date/Time:%0A`;
-      const wa = `https://wa.me/2348141352180?text=${msg}`;
-      window.open(wa,'_blank');
-    }
-
-    /* ---------- Direct order from modal (one product) ---------- */
-    function orderDirect(){
-      // create similar message but for single product currently in modal
-      if(!activeProduct) return;
-      const qty = Math.max(1, parseInt(modalQty.value||1,10));
-      const sizeLabel = modalSize.options[modalSize.selectedIndex].text;
-      let extrasArr = [];
-      modalExtras.querySelectorAll('input[type="checkbox"]').forEach((cb, idx)=>{
-        if(cb.checked){
-          const ex = activeProduct.extras[idx];
-          if(ex) extrasArr.push(`${ex.name}`);
-        }
-      });
-      const extrasLabel = extrasArr.length ? extrasArr.join(', ') : '-';
-      const price = recalcModalPrice();
-      let msg = `Hello Ray Creamy Cakes, I'd like to order:%0A%0A${activeProduct.name} - ${sizeLabel} - ${extrasLabel} - Qty: ${qty} - ₦${formatN(price)}%0A%0AName:%0APhone:%0ADelivery Address:%0A`;
-      const wa = `https://wa.me/2348141352180?text=${msg}`;
-      window.open(wa,'_blank');
-    }
-
-    /* ---------- Initialize UI ---------- */
-    renderGrid(PRODUCTS);
-    updateCartUI();
+/* ---------- Initialize UI ---------- */
+renderGrid(PRODUCTS);
 
     // close modal on ESC or click outside
     window.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
