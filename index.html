@@ -348,19 +348,47 @@ header.letterhead {
 
 <style>
 /* Footer styling */
+/* Footer */
 .site-footer {
   text-align: center;
   padding: 20px;
-  background-color: #fff; /* You can change the background color if needed */
+  background-color: #fff;
+  border-top: 2px solid var(--brand-pink);
+  margin-top: 30px;
+}
+
+/* Logo + Text inline */
+.footer-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--brand-pink);
+  margin-bottom: 12px;
 }
 
 .footer-logo {
-  max-width: 250px; /* Logo will not exceed 250px */
-  width: 100%;       /* Logo will scale down on smaller screens */
-  height: auto;
-  margin-bottom: 10px; /* Small space between logo and text */
+  max-height: 40px;
+  width: auto;
 }
 
+/* Divider effect (like tabs) */
+.footer-divider {
+  width: 60px;
+  height: 2px;
+  margin: 0 auto 12px auto;
+  background: linear-gradient(to right, transparent, #aaa, transparent);
+  border-radius: 2px;
+}
+
+/* Copyright */
+.footer-copy {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
 /* Responsive tweaks for smaller screens */
 @media (max-width: 600px) {
   .footer-logo {
