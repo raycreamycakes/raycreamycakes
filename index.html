@@ -72,25 +72,97 @@
   background: #d63384;
   border-radius: 10px;
 }
-
-.topnav ul li {
-  margin: 0 15px;
+:root {
+  --brand-pink: #d63384;
+  --brand-pink-deep: #b42b6f;
+  --white: #ffffff;
+  --muted: #f6f4f6;
+  --card-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  --max-width: 1200px;
 }
 
-.topnav ul li a {
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: var(--muted);
+  color: #222;
+  line-height: 1.4;
+}
+
+/* Header / Letterhead */
+header.letterhead {
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left text block */
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-text {
+  text-align: left;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 14px;
+  color: #d63384;
+}
+
+/* Right logo (uploaded logo image) */
+.brand-right .site-logo {
+  max-height: 60px;
+  width: auto;
+}
+
+/* Navigation bar */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  margin: 0;
+  background: var(--brand-pink);
+  border-radius: 10px;
+}
+
+.navbar li {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  padding: 10px 14px;
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* Stylish divider between tabs */
 .divider {
-  font-weight: bold;
-  color: #aaa;
-  margin: 0 6px;
-  font-size: 18px;
-  line-height: 1;
-  user-select: none;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, #aaa, transparent);
+  margin: 0 8px;
+  border-radius: 2px;
 }
     /* Hero */
     .hero{max-width:var(--max-width);margin:18px auto 0;background:linear-gradient(180deg,rgba(214,51,132,0.05),transparent);padding:30px;border-radius:12px;display:flex;gap:20px;align-items:center}
@@ -449,34 +521,6 @@
       </div>
     </div>
   </div>
-
-  <!-- CART SIDEBAR -->
-  <aside id="cartSidebar" class="cart-sidebar" aria-hidden="true">
-    <div class="cart-head">
-      <div>
-        <div style="font-weight:800;color:var(--brand-pink)">Your Cart</div>
-        <div class="muted" id="cart-count-text">0 items</div>
-      </div>
-      <div>
-        <button onclick="toggleCart()" style="background:none;border:none;font-size:20px;color:var(--brand-pink);cursor:pointer">&times;</button>
-      </div>
-    </div>
-
-    <div id="cartBody" class="cart-body">
-      <div id="cartItemsContainer" class="cart-items"></div>
-      <div id="cartEmpty" class="cart-empty">Your cart is empty — add something yummy!</div>
-    </div>
-
-    <div class="cart-footer">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div class="muted">Total</div>
-        <div class="cart-total">₦<span id="cartTotal">0</span></div>
-      </div>
-      <div style="margin-top:10px">
-        <button class="btn-primary" style="width:100%" onclick="checkout()">Checkout via WhatsApp</button>
-      </div>
-    </div>
-  </aside>
 
   <script>
     /* ---------- Product Data (36 items) ---------- */
