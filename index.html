@@ -347,6 +347,18 @@ header.letterhead {
 .contact p {
   text-align: center;
 }
+
+.contact .whatsapp-icon {
+  display: inline-block;
+  height: 50px;
+  width: auto;
+  vertical-align: middle; /* aligns icon with text */
+  margin-right: 8px;      /* space between logo and number */
+}
+
+.contact .whatsapp-icon:hover {
+  transform: scale(1.1);
+}
     
   /* Footer */
   <footer class="site-footer">
@@ -498,12 +510,11 @@ header.letterhead {
   <section id="contact" class="contact" style="margin-bottom:50px;">
   <h3 style="color:var(--brand-pink);margin-top:0">Contact & Payment</h3>
   
-  <p style="text-align:center;">
+  <p>
     WhatsApp / Phone: 
-    <a href="https://wa.me/2348141352180" target="_blank" style="display:inline-block;">
-      <img src="path-to-whatsapp-icon.png" 
-           alt="Chat on WhatsApp" 
-           style="height:50px; width:auto;">
+    <a href="https://wa.me/2348141352180" target="_blank">
+      <img src="path-to-whatsapp-icon.png" alt="Chat on WhatsApp" class="whatsapp-icon">
+      08141352180
     </a>
   </p>
 </section>
