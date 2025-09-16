@@ -337,14 +337,22 @@ header.letterhead {
 
   
   /* About / Contact sections */
-  .about, .contact{max-width:var(--max-width);margin:18px auto;padding:18px;background:white;border-radius:10px;box-shadow:var(--card-shadow)}
-  .about p, .contact p{color:#444}
-.contact .whatsapp-icon {
-  display: inline-block;
-  height: 50px;
-  width: auto;
+  .about, .contact {
+  max-width: var(--max-width);
+  margin: 18px auto;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
 }
-.contact p {
+
+/* Set deeper pastel pink background only for .contact */
+.contact {
+  background: #f8c8dc; /* slightly deeper pastel pink */
+  text-align: center;  /* centers content */
+}
+
+.about p, .contact p {
+  color: #444;
   text-align: center;
 }
 
@@ -352,8 +360,9 @@ header.letterhead {
   display: inline-block;
   height: 50px;
   width: auto;
-  vertical-align: middle; /* aligns icon with text */
-  margin-right: 8px;      /* space between logo and number */
+  margin-top: 10px;
+  transition: transform 0.3s;
+  vertical-align: middle;
 }
 
 .contact .whatsapp-icon:hover {
@@ -510,11 +519,13 @@ header.letterhead {
   <section id="contact" class="contact" style="margin-bottom:50px;">
   <h3 style="color:var(--brand-pink);margin-top:0">Contact/Orders</h3>
   
+  <!-- Phone number first -->
   <p>
     <strong>WhatsApp / Phone:</strong><br>
     <a href="https://wa.me/2348141352180" target="_blank">08141352180</a>
   </p>
 
+  <!-- WhatsApp logo below -->
   <p>
     <a href="https://wa.me/2348141352180" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
