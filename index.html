@@ -492,20 +492,25 @@ header.letterhead {
     <!-- Temporary sample product cards -->
     <div id="grid" class="grid" style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
       <div style="flex:1 1 250px; max-width:300px; text-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=600" alt="Chocolate Cake" style="width:100%; border-radius:12px;">
-        <h4>Chocolate Cake</h4>
-        <p>Rich, moist, layered with creamy frosting.</p>
-      </div>
-      <div style="flex:1 1 250px; max-width:300px; text-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-        <img src="Screenshot_20251001-192106.png" alt="Vanilla Cake" style="width:100%; border-radius:12px;">
-        <h4>Vanilla Cake</h4>
-        <p>Classic vanilla delight with smooth buttercream.</p>
-      </div>
-      <div style="flex:1 1 250px; max-width:300px; text-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
-        <img src="Screenshot_20251001-192112.png" alt="Wedding Cake" style="width:100%; border-radius:12px;">
-        <h4>Wedding Cake</h4>
-        <p>Loaded with fresh fruits and sweet flavors.</p>
-      </div>
+    <img id="vanillaCake" src="Screenshot_20251001-192106.png" alt="Vanilla Cake" style="width:100%; border-radius:12px;">
+    <h4>Vanilla Cake</h4>
+    <p>Classic vanilla delight with smooth buttercream.</p>
+</div>
+
+<div style="flex:1 1 250px; max-width:300px; text-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+    <img id="weddingCake" src="Screenshot_20251001-192112.png" alt="Wedding Cake" style="width:100%; border-radius:12px;">
+    <h4>Wedding Cake</h4>
+    <p>Loaded with fresh fruits and sweet flavors.</p>
+</div>
+
+<script>
+  // Generate a timestamp
+  const timestamp = new Date().getTime();
+
+  // Add it as a cache buster to images
+  document.getElementById('vanillaCake').src = 'Screenshot_20251001-192106.png?v=' + timestamp;
+  document.getElementById('weddingCake').src = 'Screenshot_20251001-192112.png?v=' + timestamp;
+</script>
     </div>
   </section>
 
