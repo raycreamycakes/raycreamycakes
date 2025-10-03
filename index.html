@@ -333,3 +333,192 @@ header.letterhead {
   .extras label{font-weight:500;color:#444}
   .modal-actions{display:flex;gap:10px;margin-top:6px}
   .muted{color:#666;font-size:13px}
+
+    /* About / Contact sections */
+  .about, .contact {
+  max-width: var(--max-width);
+  margin: 18px auto;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Set deeper pastel pink background only for .contact */
+.contact {
+  background: #f8c8dc; /* slightly deeper pastel pink */
+  text-align: center;  /* centers content */
+}
+
+.about p, .contact p {
+  color: #444;
+  text-align: center;
+}
+
+.contact .whatsapp-icon {
+  display: inline-block;
+  height: 50px;
+  width: auto;
+  margin-top: 10px;
+  transition: transform 0.3s;
+  vertical-align: middle;
+}
+
+.contact .whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+    
+  /* Footer */
+  /* Footer styling */
+.site-footer {  
+  text-align: center;  
+  padding: 20px;  
+  background-color: #fff;  
+  border-top: 2px solid var(--brand-pink);  
+  margin-top: 30px;  
+}  
+
+.footer-brand {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  gap: 10px;  
+  font-weight: bold;  
+  font-size: 18px;  
+  color: var(--brand-pink);  
+  margin-bottom: 12px;  
+}  
+
+.footer-logo {  
+  max-height: 40px;  
+  width: auto;  
+}  
+
+.footer-divider {  
+  width: 60px;  
+  height: 2px;  
+  margin: 0 auto 12px auto;  
+  background: linear-gradient(to right, transparent, var(--brand-pink), transparent);  
+  border-radius: 2px;  
+}  
+
+.footer-copy {  
+  margin: 0;  
+  font-size: 14px;  
+  color: #666;  
+  text-align: center;  
+}  
+
+/* Full-width Footnote section */
+.footer-footnote {
+  width: 100%;
+  background-color: navy;
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+}
+
+.footer-footnote .footnote-logo {
+  height: 22px;
+  width: auto;
+}
+
+.footer-footnote .footnote-text {
+  font-weight: 500;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {  
+  .footer-logo {  
+    max-width: 150px;  
+  }  
+  .site-footer p {  
+    font-size: 14px;  
+  }  
+}
+  </style>
+
+  <!-- HEADER / LETTERHEAD -->
+  <header class="letterhead" role="banner">
+  <div class="topbar">
+    <!-- Left Section: Logo + Text -->
+    <div class="brand-left">
+      <img src="IMG-20250909-WA0002.jpg" alt="Ray Creamy Cakes Logo" class="site-logo">
+      <div class="brand-text">
+        <h1 class="site-title">Ray Creamy Cakes</h1>
+        <p class="tagline">Delight in every bite</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <nav class="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><span class="divider"></span></li>
+    <li><a href="#products">Products</a></li>
+    <li><span class="divider"></span></li>
+    <li><a href="#about">About</a></li>
+    <li><span class="divider"></span></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<main id="home" style="padding: 40px; max-width: 1200px; margin: 0 auto;">
+  <section class="hero" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-bottom: 40px;">
+    <div class="hero-left" style="flex: 1 1 400px;">
+      <h2>Freshly baked. Beautifully crafted.</h2>
+      <p>Ray Creamy Cakes offers cakes, pastries, small chops, doughnuts and parfaits — all made with love and delivered across Lagos.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="document.getElementById('search').focus()">Order Now via WhatsApp</button>
+      </div>
+    </div>
+    <div class="hero-right" style="flex: 1 1 400px; text-align:center;">
+      <img class="hero-img" src="Screenshot_20251001-192046.png" 
+           alt="My custom hero image" style="max-width:100%; border-radius:12px;">
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <div class="search-area" style="margin-bottom:40px; text-align:center;">
+    <input id="search" placeholder="Search products (e.g., doughnuts, parfait, birthday)..." aria-label="Search products" 
+           style="padding:12px; width:80%; max-width:500px; border:1px solid #ddd; border-radius:8px;">
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <section id="products" class="products-section" style="margin-bottom:50px;">
+    <div class="section-title" style="text-align:center; margin-bottom:20px;">
+      <h3>Our Menu</h3>
+      <div class="muted">Tap a product to view options</div>
+    </div>
+
+    <!-- Temporary sample product cards -->
+    <div id="grid" class="grid" style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <div style="flex:1 1 250px; max-width:300px; text-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+    <img id="vanillaCake" src="Screenshot_20251001-192106.png" alt="Vanilla Cake" style="width:100%; border-radius:12px;">
+    <h4>Vanilla Cake</h4>
+    <p>Classic vanilla delight with smooth buttercream.</p>
+</div>
+
+<div style="flex:1 1 250px; max-width:300px; text-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+    <img id="weddingCake" src="Screenshot_20251001-192112.png" alt="Wedding Cake" style="width:100%; border-radius:12px;">
+    <h4>Wedding Cake</h4>
+    <p>Loaded with fresh fruits and sweet flavors.</p>
+</div>
+
+<script>
+  // Generate a timestamp
+  const timestamp = new Date().getTime();
+
+  // Add it as a cache buster to images
+  document.getElementById('vanillaCake').src = 'Screenshot_20251001-192106.png?v=' + timestamp;
+  document.getElementById('weddingCake').src = 'Screenshot_20251001-192112.png?v=' + timestamp;
+</script>
+  </section>
